@@ -29,6 +29,8 @@ class _SignupScreenState extends State<SignupScreen> {
     passwordController.dispose();
     confirmPasswordController.dispose();
     studentIDNumberController.dispose();
+
+    super.dispose();
   }
 
 
