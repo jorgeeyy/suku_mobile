@@ -9,6 +9,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController passwordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextField(
                           decoration: InputDecoration(
                             hintText: "Enter your email address",
-                            prefixIcon: Icon(Icons.email, color: Colors.black54),
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.black54,
+                            ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: const BorderSide(color: Colors.grey),
@@ -58,9 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         SizedBox(height: 20),
-                        Text("Password"),
-                        SizedBox(height: 10),
-                        PasswordField(),
+                        PasswordFormField(controller: passwordController, label: "Password", hintText: "Enter your password"),
                         SizedBox(height: 20),
                         Align(
                           alignment: Alignment.centerRight,
@@ -109,7 +113,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               // elevation: 2,
                             ),
                             child: Row(
-                              // crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(Icons.face, color: Colors.black54),
@@ -129,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),

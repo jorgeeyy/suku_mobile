@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:suku_mobile/screens/onboardingScreens/signupScreen.dart';
 
 import 'loginScreen.dart';
-
 
 class Welcomescreen extends StatefulWidget {
   const Welcomescreen({super.key});
@@ -11,7 +11,6 @@ class Welcomescreen extends StatefulWidget {
 }
 
 class _WelcomescreenState extends State<Welcomescreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +59,14 @@ class _WelcomescreenState extends State<Welcomescreen> {
                       width: double.infinity,
                       height: 55,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignupScreen(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue[800],
                           shape: RoundedRectangleBorder(
@@ -88,13 +94,11 @@ class _WelcomescreenState extends State<Welcomescreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => LoginScreen(),
-                            ),);
+                            ),
+                          );
                         },
                         style: OutlinedButton.styleFrom(
-                          side: BorderSide(
-                            color: Colors.blue[800]!,
-                            width: 2,
-                          ),
+                          side: BorderSide(color: Colors.blue[800]!, width: 2),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -109,8 +113,8 @@ class _WelcomescreenState extends State<Welcomescreen> {
                         ),
                       ),
                     ),
-                    // SizedBox(height: 10),
 
+                    // SizedBox(height: 10),
                   ],
                 ),
               ],
