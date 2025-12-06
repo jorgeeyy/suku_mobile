@@ -167,7 +167,11 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 55,
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          // create account
+                        }
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue[800],
                       ),
