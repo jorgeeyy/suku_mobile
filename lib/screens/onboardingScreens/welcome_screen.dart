@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:suku_mobile/screens/onboardingScreens/signupScreen.dart';
-
-import 'loginScreen.dart';
+import 'package:go_router/go_router.dart';
 
 class Welcomescreen extends StatefulWidget {
   const Welcomescreen({super.key});
@@ -21,16 +19,6 @@ class _WelcomescreenState extends State<Welcomescreen> {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "Skip",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
                 SizedBox(height: 20),
                 Container(
                   height: MediaQuery.of(context).size.height * 0.4,
@@ -60,15 +48,10 @@ class _WelcomescreenState extends State<Welcomescreen> {
                       height: 55,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignupScreen(),
-                            ),
-                          );
+                          context.push('/signup');
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue[800],
+                          backgroundColor: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -90,15 +73,13 @@ class _WelcomescreenState extends State<Welcomescreen> {
                       height: 55,
                       child: OutlinedButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginScreen(),
-                            ),
-                          );
+                          context.push('/login');
                         },
                         style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: Colors.blue[800]!, width: 2),
+                          side: BorderSide(
+                            color: Theme.of(context).primaryColor,
+                            width: 2,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -106,7 +87,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                         child: Text(
                           "Log In",
                           style: TextStyle(
-                            color: Colors.blue[800],
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),

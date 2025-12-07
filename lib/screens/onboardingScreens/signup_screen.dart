@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:suku_mobile/screens/onboardingScreens/loginScreen.dart';
-import 'package:suku_mobile/ui/passwordField.dart';
+import 'package:go_router/go_router.dart';
+import 'package:suku_mobile/ui/password_field.dart';
 
-import '../../ui/customTextForm.dart';
+import '../../ui/custom_text_form.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -33,7 +33,6 @@ class _SignupScreenState extends State<SignupScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,18 +49,18 @@ class _SignupScreenState extends State<SignupScreen> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          context.pop();
                         },
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.black54,
-                        ),
+                        icon: Icon(Icons.arrow_back, color: Colors.black54),
                       ),
                       Expanded(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.school, color: Colors.blue[700]),
+                            Icon(
+                              Icons.school,
+                              color: Theme.of(context).primaryColor,
+                            ),
                             SizedBox(width: 10),
                             Text(
                               "School Portal",
@@ -108,9 +107,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: emailController,
                     label: 'Email Address',
                     hintText: 'jane@email.com',
+                    keyboardType: TextInputType.emailAddress,
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return "Email is required";
+                      }
+                      if (!RegExp(
+                        r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                      ).hasMatch(value)) {
+                        return "Please enter a valid email";
                       }
                       return null;
                     },
@@ -173,7 +178,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue[800],
+                        backgroundColor: Theme.of(context).primaryColor,
                       ),
                       child: Text(
                         "Create Account",
@@ -188,16 +193,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       Text("Already have an account?"),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginScreen(),
-                            ),
-                          );
+                          context.push('/login');
                         },
                         child: Text(
                           "Log In",
-                          style: TextStyle(color: Colors.blue[800]),
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ],
