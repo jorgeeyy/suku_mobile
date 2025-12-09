@@ -27,9 +27,7 @@ class CustomTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),),
+        Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
         const SizedBox(height: 10),
 
         TextFormField(
@@ -56,7 +54,7 @@ class CustomTextFormField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
-                color: Colors.blue.shade800,
+                color: Theme.of(context).primaryColor,
                 width: 2,
               ),
             ),

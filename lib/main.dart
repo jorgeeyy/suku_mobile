@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:suku_mobile/screens/onboardingScreens/welcomescreen.dart';
+import 'package:suku_mobile/app_router.dart';
+import 'package:suku_mobile/core/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: Welcomescreen(),
+      theme: AppTheme.lightTheme,
+      routerConfig: appRouter,
     );
   }
 }
