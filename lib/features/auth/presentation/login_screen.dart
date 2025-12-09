@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:suku_mobile/ui/password_field.dart';
-
-import '../../ui/custom_text_form.dart';
+import 'package:go_router/go_router.dart';
+import 'package:suku_mobile/core/widgets/password_field.dart';
+import 'package:suku_mobile/core/widgets/custom_text_form.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -120,9 +120,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 55,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        // login
-                      }
+                      // if (_formKey.currentState!.validate()) {
+                      //   // login
+                      //   context.push('/dashboard');
+                      // }
+                      context.push(
+                        '/dashboard',
+                        extra: "Jorgeeyy Klunny Kwabena",
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).primaryColor,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:suku_mobile/ui/password_field.dart';
-
-import '../../ui/custom_text_form.dart';
+import 'package:suku_mobile/core/widgets/password_field.dart';
+import 'package:suku_mobile/core/widgets/custom_text_form.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
