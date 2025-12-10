@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       // }
                       context.push(
                         '/dashboard',
-                        extra: "Jorgeeyy Klunny Kwabena",
+                        extra: "Jorgeeyy",
                       );
                     },
                     style: ElevatedButton.styleFrom(

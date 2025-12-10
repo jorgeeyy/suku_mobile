@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:suku_mobile/features/dashboard/presentation/widgets/academic_snapshots.dart';
+import 'package:suku_mobile/features/dashboard/presentation/widgets/alerts.dart';
+import 'package:suku_mobile/features/dashboard/presentation/widgets/quick_links.dart';
+import 'package:suku_mobile/features/dashboard/presentation/widgets/upcoming_events.dart';
 
 class DashboardScreen extends StatefulWidget {
   final String name;
-  DashboardScreen({super.key, required this.name});
+  const DashboardScreen({super.key, required this.name});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -61,53 +65,66 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
 
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Good Morning, ${widget.name}", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-              SizedBox(height: 15),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(16),
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.blue,
-                      ),
-                      // color: Colors.blue,
-                      child: Text(
-                        "James Williams",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(16),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.grey[100],
-                      ),
-                      // color: Colors.grey[100],
-                      // color: Theme.of(context).colorScheme.secondary,
-                      child: Text(
-                        "Olivia Williams",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 20),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Good Morning, ${widget.name}",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Colors.blue,
+                        ),
+                        // color: Colors.blue,
+                        child: Text(
+                          "James Williams",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Colors.grey[100],
+                        ),
+                        // color: Colors.grey[100],
+                        // color: Theme.of(context).colorScheme.secondary,
+                        child: Text(
+                          "Olivia Williams",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15),
+                Alerts(),
+                SizedBox(height: 15,),
+                UpcomingEvents(),
+                SizedBox(height: 15,),
+                AcademicSnapshots(),
+                SizedBox(height: 15,),
+                QuickLinks()
+              ],
+            ),
           ),
         ),
       ),
