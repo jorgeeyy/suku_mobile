@@ -4,6 +4,8 @@ import 'package:suku_mobile/features/auth/presentation/signup_screen.dart';
 import 'package:suku_mobile/features/auth/presentation/welcome_screen.dart';
 import 'package:suku_mobile/features/dashboard/presentation/dashboard_screen.dart';
 
+import 'features/dashboard/presentation/contact_teacher.dart';
+
 final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
@@ -17,5 +19,6 @@ final appRouter = GoRouter(
         return DashboardScreen(name: name);
       },
     ),
+    GoRoute(path: '/contact-teacher', builder: (context, state) => const ContactTeacher()),
   ],
 );

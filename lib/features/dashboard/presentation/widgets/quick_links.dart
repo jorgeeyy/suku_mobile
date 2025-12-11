@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class QuickLinks extends StatefulWidget {
   const QuickLinks({super.key});
@@ -69,17 +70,22 @@ class _QuickLinksState extends State<QuickLinks> {
                 ],
               ),
             ),
-            Card(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.mail, color: Color(0xFF3A7BFF), size: 30),
-                  SizedBox(height: 10),
-                  Text(
-                    "Contact Teacher",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                ],
+            InkWell(
+              onTap: () {
+                context.push('/contact-teacher');
+              },
+              child: Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.mail, color: Color(0xFF3A7BFF), size: 30),
+                    SizedBox(height: 10),
+                    Text(
+                      "Contact Teacher",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

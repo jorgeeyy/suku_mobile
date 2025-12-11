@@ -22,13 +22,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(2.0),
         child: Container(
-          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+          // margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
           // decoration: BoxDecoration(
           //   color: Colors.transparent,
           // ),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
           child: ClipRRect(
-            // borderRadius: BorderRadius.circular(30),
             child: BottomNavigationBar(
               selectedItemColor: Colors.blue,
               unselectedItemColor: Colors.grey,
