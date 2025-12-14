@@ -3,6 +3,7 @@ import 'package:suku_mobile/features/auth/presentation/login_screen.dart';
 import 'package:suku_mobile/features/auth/presentation/signup_screen.dart';
 import 'package:suku_mobile/features/auth/presentation/welcome_screen.dart';
 import 'package:suku_mobile/features/dashboard/presentation/dashboard_screen.dart'; // Assuming this is now your content-only view
+import 'package:suku_mobile/features/dashboard/presentation/school_calendar.dart';
 import 'features/dashboard/presentation/contact_teacher.dart';
 import 'app_shell.dart'; // Your AppShell that holds the BottomNavigationBar
 
@@ -50,6 +51,13 @@ final appRouter = GoRouter(
           name: 'messages',
           // Assuming ContactTeacher is the Messages page for now
           builder: (context, state) => const ContactTeacher(),
+        ),
+
+        GoRoute(
+          path: '/calendar',
+          name: 'calendar',
+          // Assuming ContactTeacher is the Messages page for now
+          builder: (context, state) => const SchoolCalendar(),
         ),
 
         // Tab 4: Profile (Placeholder)

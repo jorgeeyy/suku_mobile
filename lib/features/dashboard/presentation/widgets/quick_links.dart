@@ -27,21 +27,26 @@ class _QuickLinksState extends State<QuickLinks> {
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           children: [
-            Card(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.calendar_month,
-                    color: Color(0xFF3A7BFF),
-                    size: 30,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "TimeTable",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                ],
+            InkWell(
+              onTap: () {
+                context.go('/calendar');
+              },
+              child: Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.calendar_month,
+                      color: Color(0xFF3A7BFF),
+                      size: 30,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "School Calendar",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                  ],
+                ),
               ),
             ),
             Card(
