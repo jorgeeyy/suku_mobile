@@ -12,7 +12,6 @@ class AppTheme {
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: Colors.blue[800],
       secondary: Colors.blue[700],
-      // saedgfgfg
     ),
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(color: Colors.black54),
