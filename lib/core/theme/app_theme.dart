@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
+    fontFamily: 'Handlee',
+    textTheme: TextTheme(
+      headlineLarge: TextStyle(
+        fontFamily: 'Handlee'
+      )
+    ),
     primaryColor: Colors.blue[800],
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: Colors.blue[800],
