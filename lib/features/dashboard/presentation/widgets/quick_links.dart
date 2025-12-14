@@ -64,7 +64,7 @@ class _QuickLinksState extends State<QuickLinks> {
                   Icon(Icons.local_dining, color: Color(0xFF3A7BFF), size: 30),
                   SizedBox(height: 10),
                   Text(
-                    "TimeTable",
+                    "Lunch Menu",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                 ],
@@ -72,7 +72,7 @@ class _QuickLinksState extends State<QuickLinks> {
             ),
             InkWell(
               onTap: () {
-                context.push('/contact-teacher');
+                context.go('/messages');
               },
               child: Card(
                 child: Column(
